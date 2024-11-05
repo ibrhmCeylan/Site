@@ -1,0 +1,518 @@
+*{
+    margin: 0;
+    padding: 0  ;
+    font-family: sans-serif;
+}
+body{
+    background-color: #bebebe;
+    
+}
+
+
+/*___________________TAB KISMI___________________*/
+.tab-container {
+    overflow: hidden; /* Yatay kaydırma çubuğunu gizle */
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    position: relative; /* Butonların konumlandırılması için */
+}
+.tab-buttons {
+    display: flex; /* Flexbox ile butonları yan yana diz */
+    overflow-x: auto; /* Yatay kaydırma için */
+    white-space: nowrap; /* Butonların yan yana durması için */
+    scroll-behavior: smooth; /* Kaydırma animasyonu için */
+    padding: 0 40px; /* Kenarlardan boşluk bırak */
+    scrollbar-width: none; /* Firefox için kaydırma çubuğunu gizle */
+}
+.tab-buttons::-webkit-scrollbar {
+    display: none; /* Chrome ve Safari için kaydırma çubuğunu gizle */
+}
+.tab {
+    display: none;
+}
+.tab-button {
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.tab-button.active {
+    background-color: #2980b9;
+}
+.scroll-button {
+    position: absolute; /* Kaydırma butonlarını konumlandır */
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #e67e22;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 5px; /* Köşeleri yuvarlaştır */
+    transition: background-color 0.3s; /* Geçiş efekti */
+}
+.scroll-button:hover {
+    background-color: #d35400; /* Hover rengi */
+}
+.scroll-left {
+    left: 10px; /* Sol kenardan uzaklık */
+}
+.scroll-right {
+    right: 10px; /* Sağ kenardan uzaklık */
+}
+
+/*___________________TAB KISMI___________________*/
+
+
+
+
+
+.proje h1{
+    text-align: center;
+}
+.proje{
+    margin: 10px;
+}
+#loading{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: 2c96a7;
+    z-index: 999
+}
+.header{
+    height: 80px;
+    background-color: #2c96a7;
+    padding: 20px;
+    color: white;
+
+}
+.logo{
+    line-height: 80px;
+    font-size: 25px;
+    transition: 0.5s;
+    float: left;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.3);
+}
+.logo:hover{
+    font-size: 30px;
+    letter-spacing: 2px;
+}
+.menu{
+    float: right;
+    line-height: 80px;
+    z-index: 998
+    
+}
+.menu a{
+    color: rgb(255, 255, 255);
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 0 10px;
+    transition: 0.4s;
+    font-weight: 600;
+    
+}
+
+.show-menu-btn, .hide-menu-btn{
+    transition: 0.4s;
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+}
+
+.show-menu-btn{
+    float: right;
+}
+.show-menu-btn i{
+    line-height: 100%;
+    padding: 30px 0;
+}
+.menu a:hover{
+    letter-spacing: 1px;
+}
+
+
+
+
+
+.menu a:hover,
+.show-menu-btn:hover,
+.hide-menu-btn:hover{
+    color: #005A5B;
+}
+#chk{
+    position: absolute;
+    visibility: hidden;
+}
+.content{
+    padding: 0 20px;
+    
+}
+.content h1{
+    text-align: justify;
+    margin: 20px;
+    color: rgb(228, 91, 0);
+    letter-spacing: 3px;
+    font-size: 50px;
+    text-align: center;
+    line-height: 1000%;
+    transition: 0.3s;   
+}
+.content h1:hover{
+    letter-spacing: 5px;
+    font-size: 55px;
+}
+
+@media  screen and (max-width: 800px) {
+    .show-menu-btn,.hide-menu-btn{
+        display: block;
+    }
+    .menu{
+        position: fixed;
+        width: 40%;
+        height: 100vh;
+        background-color: #29818f;
+        right: -100%;
+        top: 0px;
+        text-align: center;
+        padding: 80px 0;
+        line-height: normal;
+        transition: 0.7s;
+    }
+    .menu a{
+        display: block;
+        padding: 20px;
+    }
+    .hide-menu-btn{
+        position: absolute;
+        top: 40px;
+        right: 40px;
+    }
+    #chk:checked ~ .menu{
+        right: 0; 
+    }
+}
+
+.box{
+    width: 450px;
+    background-color: #24727e;
+    padding: 40px;
+    text-align: center;
+    margin: auto;
+    margin-top: 5%;
+    color: white;
+    font-family: sans-serif;
+
+}
+
+.box img{
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.box img:hover{
+    transform: scale(0.9);  
+}
+
+.box h1{
+    font-size: 40px;
+    letter-spacing: 4px;
+    font-weight: 100;
+}
+
+.box h5{
+    font-size: 20px;
+    font-weight: 100;
+    letter-spacing: 3px;
+}
+.box p{
+    text-align: justify;
+}
+
+ul{
+    margin: 0;
+    padding: 0;
+    
+
+}
+
+.box li{
+    display: inline-block;
+    margin: 6px;
+    list-style: none;
+}
+.box li a{
+    color: white;
+    font-size: 60px;
+    transition: all ease-in-out 250ms;
+}
+
+.box li a:hover{
+    color: rgb(177, 177, 177);
+}
+
+
+.baslık h1{
+    color: rgb(0, 0, 0);
+    text-align: center;
+    margin-top: 30px;
+}
+.baslık h2{
+    color: rgb(0, 0, 0);
+    text-align: center;
+    margin-top: 30px;
+}
+
+.baslık div{
+    width: 10vw;
+    height: 10vh;
+    border: 0.3vw solid black;
+    
+}
+#icon{
+    width: 30px;
+    cursor: pointer;
+}
+
+
+.k1, .k2, .k3, .k4, .k5, .k6, .k7{
+    background-color: #3d6da5;
+    margin: 5px;
+    
+}
+
+.baslık .k1{
+    border-radius: 10px;
+}
+.baslık .k2{
+    border-style: dotted;
+}
+.baslık .k3{
+    border-left-color: #f1ff76;
+}
+.baslık .k4{
+    border-color: #003840;
+}
+.baslık .k5{
+    border-right: 3px dashed navy;
+}
+
+fieldset{
+    margin-top: 170px;
+    margin-bottom: 20px;
+    position: absolute;
+    top: 100px;
+    left: 20px;
+    right: 60%;
+    border: 2px solid black;
+}
+
+@import url('https://fonts.googleapis.com/css2? family=Poppins:wght@200;300;400;500;600;700& display=swap');
+
+.drag-area {
+    border: 2px dashed #000000;
+    height: 500px;
+    width: 700px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    margin-top: 80px;
+    margin-left: 450px;
+}
+
+.drag-area.active {
+    border: 2px solid #000000;
+}
+
+.drag-area .icon {
+    font-size: 100px;
+    color: #000000;
+}
+
+.drag-area header {
+    font-size: 30px;
+    font-weight: 500;
+    color: #000000;
+}
+
+.drag-area span {
+    font-size: 25px;
+    font-weight: 500;
+    color: #000000;
+    margin: 10px 0 15px 0;
+}
+
+.drag-area button {
+    padding: 10px 25px;
+    font-size: 20px;
+    font-weight: 500;
+    border: none;
+    outline: none;
+    background: #ffffff;
+    color: #000000;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.drag-area img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.file-item button.remove-btn {
+    background-color: red; /* Kırmızı arka plan */
+    color: white; /* Beyaz yazı rengi */
+    border: none; /* Kenarlık yok */
+    border-radius: 5px; /* Yuvarlatılmış köşeler */
+    padding: 5px 10px; /* İç boşluk */
+    cursor: pointer; /* İmleç değişimi */
+    margin-left: auto; /* Butonu sağa yasla */
+}
+
+.file-item button.remove-btn:hover {
+    background-color: darkred; /* Üzerine gelindiğinde daha koyu kırmızı */
+}
+#fileList {
+    display: none; /* Başlangıçta gizle */
+}
+
+#fileList.visible {
+    display: block; /* Dosya yüklendiğinde göster */
+}
+
+.file-list {
+    margin-top: 80px;
+    margin-left: 20px;/* Dosya listesinin üstüne boşluk ekle */
+    margin-right: 1180px;
+    padding: 5px; /* İçerik için boşluk ekle */
+    border: 1px solid #ccc; /* Kenarlık ekle */
+    border-radius: 10px; /* Yuvarlatılmış köşeler */
+    background-color: #8f8f8f; /* Arka plan rengi */
+    max-height: 492px; /* Maksimum yükseklik */
+    overflow-y: auto; /* Taşma durumunda kaydırma çubuğu ekle */
+    cursor: pointer;
+}
+
+.file-viewer {
+    position: absolute; /* Sabit konum */
+    top:200px; /* Üstten boşluk */
+    left: 1372px; /* Ortaya hizalama */
+    transform: translateX(-50%); /* Ortaya hizalama */
+    width: 380px;
+    height: 500px;
+    background-color: white; /* Arka plan rengi */
+    border-radius: 10px;
+    border: 1px solid #ccc; /* Kenar rengi */
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2); /* Gölgelendirme */
+    z-index: 1000; /* Üstte kalması için */
+    display: none; /* Başlangıçta gizli */
+    
+    animation: fadeIn 0.3s; /* Animasyon */
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#iframeViewer {
+    width: 100%; /* Genişlik */
+    height: 100%; /* Yükseklik */
+    border: none; /* Kenar çizgisi yok */
+    border-radius: 10px; /* Kenar yuvarlama */
+}
+
+#closeButton {
+    background: none; /* Arka planı kaldır */
+    border: none; /* Kenar çizgisini kaldır */
+    font-size: 24px; /* Font boyutu */
+    color: #333; /* Renk */
+    cursor: pointer; /* İmleci el şeklinde göster */
+    position: absolute; /* Konumu mutlak */
+    top: 10px; /* Üstten boşluk */
+    right: 10px; /* Soldan boşluk */
+    transition: color 0.3s; /* Renk geçişi */
+}
+
+#closeButton:hover {
+    color: red; /* Üzerine gelince rengi değiştir */
+}
+.file-item {
+    
+    display: flex;
+    align-items: center; /* İkon ve metni ortala */
+    margin: 10px 0; /* Öğeler arasında boşluk bırak */
+    padding: 10px; /* Öğeler için iç boşluk */
+    border-radius: 5px; /* Yuvarlatılmış köşeler */
+    transition: background-color 0.2s; /* Geçiş efekti */
+}
+
+.file-item:hover {
+    background-color: #555555; /* Üzerine gelindiğinde arka plan rengi */
+}
+
+.file-item i {
+    margin-right: 10px; /* İkon ile metin arasına boşluk ekle */
+    color: #ffffff; /* İkon rengi */
+    font-size: 20px; /* İkon boyutu */
+}
+
+.file-item p {
+    margin: 0; /* Paragrafın varsayılan üst ve alt boşluklarını kaldır */
+    font-weight: 500; /* Kalın yazı tipi */
+    color: #ffffff; /* Metin rengi */
+    font-family: sans-serif;
+    font-size: 20px;
+}
+
+
+
+
+
+
+/*___________________________*/
+
+#form{
+    background-color: gray;
+    padding: 40px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.box1,.box2,.box3{
+    width: 342px;
+    background-color: #3d6da5;
+    margin: 5px;
+}
+
+.box1{
+    height: 75px;
+}
+.box2{
+    height: 100px;
+}
+.box3{
+    height: 30px;
+}
